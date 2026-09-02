@@ -1,0 +1,8 @@
+repozytorium - folder z plikami odnośnie projektu (pokazuje też historie)
+github - przechowuje repozytorium w chmurze
+git - przechowuje repozytorium lokalnie
+commit - zapisuje zmiany
+branch - trzyma kopię projektu (pozwala np. naprawić błędy)
+checkout - zmienia branch
+merge - łączy branche
+rebase - podmienia branche
