@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <style>
+    #kwadrat { width: 150px; height: 150px; background: lightgray; }
+  </style>
+
+  <style>
+    #jablko { width: 30px; height: 30px; background: red; }
+  </style>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strona jquery</title>
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+    <script>
+    $(function(){
+        let x = 0;
+        $('#kwadrat').click(function(){
+            x++;
+          $('#kwadrat').toggle();
+          if(x%2 == 0){
+                $('#przycisk').text("ukryj")
+            }else{
+                $('#przycisk').text("pokaz")
+            }
+            
+        })
+
+        $('#przycisk').click(function(){
+            x++;
+            if(x%2 == 0){
+                $('#kwadrat').show();
+                $('#przycisk').text("ukryj")
+            }else{
+                $('#kwadrat').hide();
+                $('#przycisk').text("pokaz")
+            }
+
+        })
+
+        $('#jablko').click(function(){
+            x++;
+            if(x%2 == 0){
+                $('#kwadrat').slideDown();
+                $('#przycisk').text("ukryj")
+            }else{
+                $('#kwadrat').slideUp();
+                $('#przycisk').text("pokaz")
+            }
+
+            })
+
+        $(document).on('keydown', function(){
+            if(event.key === ' ' || event.key === 'Spacebar' || event.key === 'Space'){
+                x++;
+            if(x%2 == 0){
+                $('#przycisk').text("ukryj")
+            }else{
+                $('#przycisk').text("pokaz")
+            }
+            $('#kwadrat').slideToggle();
+            }
+             
+        })
+
+
+
+
+    });
+    </script>
+</head>
+<body>
+      <input type="text" id="pole">
+
+      <p>Typ zdarzenia
+        <span id="eventType">----</span>
+      </p>
+
+      <p>
+        Pozycja myszy:
+        x = <span id="pageX">----</span>
+        y = <span id="pageY">----</span>
+      </p>
+      <button id="przycisk">ukryj</button>
+
+      <div id="kwadrat"></div>
+      <div id="jablko"></div>
+ 
+</body>
+</html>

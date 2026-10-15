@@ -1,0 +1,87 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Zdarzenia w jQuery – wersja C</title>
+        <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao="
+         crossorigin="anonymous">
+        </script>
+        <script>
+            $(function(){
+                $('#imie').hide();
+                $('#wiktor').hide();
+
+                $('#wyslij').click(function(){
+                    let odp1 = $('[name = "imie"]:checked').val();
+                    if(odp1 == '1A'){
+                        $('#1A').addClass("dobrze");
+                    }else{
+                        $('#1A').addClass("dobrze");
+                        $('#' + odp1).addClass("zle");
+                        $('#imie').slideDown();
+                    }
+
+                    let odp2 = $('[name = "wiktor"]:checked').val();
+                    if(odp2 == '2B'){
+                        $('#2B').addClass("dobrze");
+                    }else{
+                        $('#2B').addClass("dobrze");
+                        $('#' + odp2).addClass("zle");
+                        $('#wiktor').slideDown();
+                    }
+                    
+                    
+                })
+            });
+        </script>
+        <style>
+            body { font-family: Arial, sans-serif; max-width: 640px; margin: 25px auto; }
+            #panel p { margin: 4px 0; }
+            .obszar { width: 150; height: 150px; border: 2px solid #333; margin: 12px 0; background-color: #f5f5f5; }
+            #podglad { font-size: 120%; }
+            .dobrze { background-color: green; font-weight: bold; }
+            .zle { background-color: crimson; font-weight: bold; }
+        </style>
+    </head>
+    <body>
+        <h1>Quiz</h1>
+
+
+        <p>Jak Ignacy ma na imię?</p>
+        <label id="1A">A: Ignacy</label>
+        <input type="radio" name="imie" value="1A"></input>
+        <br>
+        <label id="1B">B: Ziemowit</label>
+        <input type="radio" name="imie" value="1B"></input>
+        <br>
+        <label id="1C">C: wel</label>
+        <input type="radio" name="imie" value="1C"></input>
+        <br>
+        <label id="1D">D: Gustaw</label>
+        <input type="radio" name="imie" value="1D"></input>
+
+        <div id="imie" class="obszar"><p>Wyjaśnienie: Ignacy ma na imię Ignacy :D</p></div>
+
+        <br>
+        <br>
+
+        <p>Jak ma na imię Wiktor?</p>
+        <label id="2A">A: Ignacy</label>
+        <input type="radio" name="wiktor" value="2A"></input>
+        <br>
+        <label id="2B">B: Wiktor</label>
+        <input type="radio" name="wiktor" value="2B"></input>
+        <br>
+        <label id="2C">C: Damian</label>
+        <input type="radio" name="wiktor" value="2C"></input>
+        <br>
+        <label id="2D">D: Bartosz</label>
+        <input type="radio" name="wiktor" value="2D"></input>
+
+        <div id="wiktor" class="obszar"><p>Wyjaśnienie: Wiktora imię to "Wiktor"!</p></div>
+
+
+
+        <hr>
+        <button id="wyslij">Sprawdź odpowiedzi</button>
+    </body>
+</html>
